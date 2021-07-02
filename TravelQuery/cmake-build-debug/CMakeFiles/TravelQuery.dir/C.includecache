@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/AdjMGraph.h
+SeqList.h
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/SeqList.h
+
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/AdjMGraphCreate.h
+AdjMGraph.h
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/AdjMGraph.h
+
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/Dijkstra.h
+
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/SeqList.h
+
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/main.c
+stdio.h
+-
+malloc.h
+-
+AdjMGraph.h
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/AdjMGraph.h
+AdjMGraphCreate.h
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/AdjMGraphCreate.h
+Dijkstra.h
+E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/Dijkstra.h
+
