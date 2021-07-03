@@ -1,5 +1,5 @@
+#pragma once
 #include "AdjMGraph.h"
-
 typedef struct {
 	int row;
 	int col;

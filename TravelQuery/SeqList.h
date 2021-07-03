@@ -1,12 +1,4 @@
-//
-// Created by someo on 7/2/2021.
-//
-
-#ifndef TRAVELQUERY_SEQLIST_H
-#define TRAVELQUERY_SEQLIST_H
-
-#endif //TRAVELQUERY_SEQLIST_H
-
+#pragma once
 typedef struct {
 	DataType list[MaxSize];
 	int size;

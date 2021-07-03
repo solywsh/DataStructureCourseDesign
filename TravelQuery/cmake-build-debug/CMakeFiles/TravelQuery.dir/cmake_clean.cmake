@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TravelQuery.dir/main.c.obj"
   "TravelQuery.exe"
   "TravelQuery.exe.manifest"
-  "TravelQuery.lib"
   "TravelQuery.pdb"
+  "libTravelQuery.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
