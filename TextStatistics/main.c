@@ -35,6 +35,7 @@ int main(void) {
 		SPA_number += r(&temporary, r_space);
 		TotalWords++;
 	}
+	
 	printf("总字数：%d\n",TotalWords);
 	printf("中文字数：%d\n",CN_number);
 	printf("英文字数：%d",EN_number);

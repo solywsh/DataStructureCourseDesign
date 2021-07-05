@@ -11,14 +11,14 @@ typedef char DataType;
 #include "Dijkstra.h"
 
 
-//void PreviousPath(AdjMGraph *g, const int path[10], int flag) {
-//	int Previous_Place = path[flag],temp;
-//	if (Previous_Place != -1) {
-//		temp = Previous_Place;
-//		PreviousPath(g, path, path[Previous_Place]);
-//		printf("%c->", g->Vertices.list[temp]);
-//	} else return;
-//}
+void PreviousPath(AdjMGraph *g, const int path[10], int flag) {
+	int Previous_Place = path[flag],temp;
+	if (Previous_Place != -1) {
+		temp = Previous_Place;
+		PreviousPath(g, path, path[Previous_Place]);
+		printf("%c->", g->Vertices.list[temp]);
+	} else return;
+}
 
 int main(void) {
 	AdjMGraph g;
@@ -52,12 +52,12 @@ int main(void) {
 		printf("\t到%c的最少路费为%d元.\n", g.Vertices.list[i], distance[i]);
 	}
 
-	printf("从%c到其他景点的前一地点为:\n", g.Vertices.list[0]);
+	printf("\n从%c到其他景点的前一地点为:\n", g.Vertices.list[0]);
 	for (i = 1; i < n; ++i) {
 		//PreviousPath(&g, path, i);
 		int Previous_Place, flag = i;
 		if (path[flag] != -1) {
-			printf("\t到%c的路径为: %c", g.Vertices.list[i], g.Vertices.list[i]);
+			printf("\t到景点%c的路径为: %c", g.Vertices.list[i], g.Vertices.list[i]);
 			Previous_Place = path[flag];
 			while (Previous_Place != -1 ) {
 				printf("<-%c", g.Vertices.list[Previous_Place]);
