@@ -1,0 +1,3 @@
+"D:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\TravelQuery.dir/objects.a
+D:\PROGRA~2\MinGW\MinGW\bin\ar.exe cr CMakeFiles\TravelQuery.dir/objects.a @CMakeFiles\TravelQuery.dir\objects1.rsp
+D:\PROGRA~2\MinGW\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\TravelQuery.dir/objects.a -Wl,--no-whole-archive -o TravelQuery.exe -Wl,--out-implib,libTravelQuery.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TravelQuery.dir\linklibs.rsp

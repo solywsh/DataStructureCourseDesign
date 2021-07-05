@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="TextStatistics"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TextStatistics">
+				<Option output="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/TextStatistics.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files (x86)\mingw\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="d:\program files (x86)\mingw\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="d:\program files (x86)\mingw\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 TextStatistics"/>
+					<CompileFile command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TextStatistics/fast">
+				<Option output="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/TextStatistics.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files (x86)\mingw\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="d:\program files (x86)\mingw\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="d:\program files (x86)\mingw\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 TextStatistics/fast"/>
+					<CompileFile command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MinGW/MinGW/bin/mingw32-make.exe -f &quot;E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/main.c">
+			<Option target="TextStatistics"/>
+		</Unit>
+		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/regex..c">
+			<Option target="TextStatistics"/>
+		</Unit>
+		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/regex.h">
+			<Option target="TextStatistics"/>
+		</Unit>
+		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

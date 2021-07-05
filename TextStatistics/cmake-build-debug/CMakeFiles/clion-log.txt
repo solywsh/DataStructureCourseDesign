@@ -1,0 +1,7 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/tmp.YDK6lCKBhz
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.19 or higher is required.  You are running version 3.5.2
+
+
+-- Configuring incomplete, errors occurred!
+无法解析编译器路径 'D:/Program Files (x86)/MinGW/MinGW/bin/gcc.exe'
