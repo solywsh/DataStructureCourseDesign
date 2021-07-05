@@ -11,14 +11,14 @@ typedef char DataType;
 #include "Dijkstra.h"
 
 
-void PreviousPath(AdjMGraph *g, const int path[10], int flag) {
-	int Previous_Place = path[flag],temp;
-	if (Previous_Place != -1) {
-		temp = Previous_Place;
-		PreviousPath(g, path, path[Previous_Place]);
-		printf("%c->", g->Vertices.list[temp]);
-	} else return;
-}
+// void PreviousPath(AdjMGraph *g, const int path[10], int flag) {
+// 	int Previous_Place = path[flag],temp;
+// 	if (Previous_Place != -1) {
+// 		temp = Previous_Place;
+// 		PreviousPath(g, path, path[Previous_Place]);
+// 		printf("%c->", g->Vertices.list[temp]);
+// 	} else return;
+// }
 
 int main(void) {
 	AdjMGraph g;
