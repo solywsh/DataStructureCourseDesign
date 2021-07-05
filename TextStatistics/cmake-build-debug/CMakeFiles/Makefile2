@@ -92,12 +92,12 @@ clean: CMakeFiles/TextStatistics.dir/clean
 CMakeFiles/TextStatistics.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextStatistics.dir\build.make CMakeFiles/TextStatistics.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextStatistics.dir\build.make CMakeFiles/TextStatistics.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\MyProgram\school\DataStructure\CourseDesign\TextStatistics\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target TextStatistics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\MyProgram\school\DataStructure\CourseDesign\TextStatistics\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target TextStatistics"
 .PHONY : CMakeFiles/TextStatistics.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TextStatistics.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\MyProgram\school\DataStructure\CourseDesign\TextStatistics\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\MyProgram\school\DataStructure\CourseDesign\TextStatistics\cmake-build-debug\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/TextStatistics.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\MyProgram\school\DataStructure\CourseDesign\TextStatistics\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/TextStatistics.dir/rule

@@ -52,7 +52,7 @@ int main(void) {
 		printf("\t到%c的最少路费为%d元.\n", g.Vertices.list[i], distance[i]);
 	}
 
-	printf("从%c到其他景点的前一地点为:", g.Vertices.list[0]);
+	printf("从%c到其他景点的前一地点为:\n", g.Vertices.list[0]);
 	for (i = 1; i < n; ++i) {
 		//PreviousPath(&g, path, i);
 		int Previous_Place, flag = i;

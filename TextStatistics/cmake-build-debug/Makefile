@@ -168,33 +168,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextStatistics.dir\build.make CMakeFiles/TextStatistics.dir/main.c.s
 .PHONY : main.c.s
 
-regex..obj: regex..c.obj
-
-.PHONY : regex..obj
-
-# target to build an object file
-regex..c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextStatistics.dir\build.make CMakeFiles/TextStatistics.dir/regex..c.obj
-.PHONY : regex..c.obj
-
-regex..i: regex..c.i
-
-.PHONY : regex..i
-
-# target to preprocess a source file
-regex..c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextStatistics.dir\build.make CMakeFiles/TextStatistics.dir/regex..c.i
-.PHONY : regex..c.i
-
-regex..s: regex..c.s
-
-.PHONY : regex..s
-
-# target to generate assembly for a file
-regex..c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextStatistics.dir\build.make CMakeFiles/TextStatistics.dir/regex..c.s
-.PHONY : regex..c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -207,9 +180,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... regex..obj
-	@echo ... regex..i
-	@echo ... regex..s
 .PHONY : help
 
 

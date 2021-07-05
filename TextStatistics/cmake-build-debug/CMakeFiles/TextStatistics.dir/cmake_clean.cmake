@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TextStatistics.dir/main.c.obj"
-  "CMakeFiles/TextStatistics.dir/regex..c.obj"
   "TextStatistics.exe"
   "TextStatistics.exe.manifest"
   "TextStatistics.pdb"

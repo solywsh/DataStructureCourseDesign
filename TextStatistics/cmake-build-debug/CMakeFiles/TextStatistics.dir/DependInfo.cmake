@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/main.c" "E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj"
-  "E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/regex..c" "E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/cmake-build-debug/CMakeFiles/TextStatistics.dir/regex..c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
