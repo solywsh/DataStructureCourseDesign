@@ -89,6 +89,9 @@
 		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/main.c">
 			<Option target="TravelQuery"/>
 		</Unit>
+		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/map.h">
+			<Option target="TravelQuery"/>
+		</Unit>
 		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

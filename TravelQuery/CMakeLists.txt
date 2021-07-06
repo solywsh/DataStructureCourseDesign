@@ -3,4 +3,4 @@ project(TravelQuery C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(TravelQuery main.c SeqList.h AdjMGraph.h AdjMGraphCreate.h Dijkstra.h)
+add_executable(TravelQuery main.c SeqList.h AdjMGraph.h AdjMGraphCreate.h Dijkstra.h map.h)

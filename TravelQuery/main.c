@@ -1,69 +1,99 @@
-#include <stdio.h>
 #include <malloc.h>
 
-typedef char DataType;
-#define MaxSize 10
-#define MaxVertices 10
-#define MaxWeight 10000
+typedef char *DataType;
+#define MaxSize 10 //Ë³Ğò±íÊı×é×î´ó¸öÊı
+#define MaxVertices 10//¶¥µã×î´ó¸öÊı
+#define MaxWeight 10000//È¨Öµ×î´óÖµ
 
 #include "AdjMGraph.h"
 #include "AdjMGraphCreate.h"
 #include "Dijkstra.h"
+#include "map.h"
 
-
-// void PreviousPath(AdjMGraph *g, const int path[10], int flag) {
-// 	int Previous_Place = path[flag],temp;
-// 	if (Previous_Place != -1) {
-// 		temp = Previous_Place;
-// 		PreviousPath(g, path, path[Previous_Place]);
-// 		printf("%c->", g->Vertices.list[temp]);
-// 	} else return;
-// }
-
+//int main(void) {
+//	AdjMGraph g;
+//	//´´½¨10¸öµØµã
+//	char a[MaxVertices] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+//	//ÊäÈëÁÚ½Ó¾ØÕó
+//	RowColWeight rcw[] = {
+//			{0, 1, 2},
+//			{0, 2, 3},
+//			{1, 2, 5},
+//			{1, 4, 7},
+//			{2, 5, 6},
+//			{2, 6, 4},
+//			{3, 5, 3},
+//			{3, 7, 2},
+//			{3, 8, 7},
+//			{4, 3, 4},
+//			{5, 8, 8},
+//			{6, 7, 10},
+//			{6, 9, 10},
+//			{8, 9, 20},
+//	};
+//	//ÉèÖÃ»ù±¾±äÁ¿£¬¹²ÓĞ10¸öµØµã£¬14ÌõÂ·¾¶
+//	int i, n = MaxVertices, e = 14;
+//	int distance[MaxVertices], path[MaxVertices];
+//	CreatGraph(&g, a, n, rcw, e);
+//	Dijkstra(g, 0, distance, path);
+//
+//	printf("´Ó%cµ½ÆäËû¾°µãµÄÉÙÂ··ÑÎª:\n", g.Vertices.list[0]);
+//	for (i = 0; i < n; ++i) {
+//		printf("\tµ½%cµÄ×îÉÙÂ··ÑÎª%dÔª.\n", g.Vertices.list[i], distance[i]);
+//	}
+//
+//	printf("\n´Ó%cµ½ÆäËû¾°µãµÄÇ°Ò»µØµãÎª:\n", g.Vertices.list[0]);
+//	for (i = 1; i < n; ++i) {
+//		//PreviousPath(&g, path, i);
+//		int Previous_Place, flag = i;
+//		if (path[flag] != -1) {
+//			printf("\tµ½¾°µã%cµÄÂ·¾¶Îª: %c", g.Vertices.list[i], g.Vertices.list[i]);
+//			Previous_Place = path[flag];
+//			while (Previous_Place != -1 ) {
+//				printf("<-%c", g.Vertices.list[Previous_Place]);
+//				Previous_Place = path[Previous_Place];
+//			}
+//		}
+//		printf("\n");
+//	}
+//}
 int main(void) {
-	AdjMGraph g;
-	//åˆ›å»º10ä¸ªåœ°ç‚¹
-	char a[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-	//è¾“å…¥é‚»æ¥çŸ©é˜µ
-	RowColWeight rcw[] = {
-			{0, 1, 2},
-			{0, 2, 3},
-			{1, 2, 5},
-			{1, 4, 7},
-			{2, 5, 6},
-			{2, 6, 4},
-			{3, 5, 3},
-			{3, 7, 2},
-			{3, 8, 7},
-			{4, 3, 4},
-			{5, 8, 8},
-			{6, 7, 10},
-			{6, 9, 10},
-			{8, 9, 20},
-	};
-	//è®¾ç½®åŸºæœ¬å˜é‡ï¼Œå…±æœ‰10ä¸ªåœ°ç‚¹ï¼Œ14æ¡è·¯å¾„
-	int i, n = 10, e = 14;
-	int distance[10], path[10];
-	CreatGraph(&g, a, n, rcw, e);
-	Dijkstra(g, 0, distance, path);
+//	int n = MaxVertices, count = 0;
+//	int distance[MaxVertices], path[MaxVertices];
+//	AdjMGraph g;
+//	//´´½¨10¸öµØµã
+//	char place_name[MaxVertices];
+//	CreatePlace(place_name);
+//	//ÊäÈëÁÚ½Ó¾ØÕó
+//	RowColWeight rcw[100];
+//	count = CreateAdjacencyMatrix(place_name, rcw);
+//	//´´½¨Í¼
+//	CreatGraph(&g, place_name, n, rcw, count);
+//	//½øĞĞ×î¶ÌÂ·¾¶ÔËËã
+//	Dijkstra(g,0, distance, path);
+//	//´òÓ¡µ½ÆäËûµØµãµÄ»¨·Ñ
+//	print_cost(g,distance);
+//	//´òÓ¡µ½ÆäËûµØµãµÄÂ·¾¶
+//	print_path(g,path);
+//
+//	return 0;
+	char *PlaceName[100];
+	int LetterCode = 65;//´´½¨Ó¢ÎÄ±àÂë£¬aµÄ±àÂëÎª65
+	printf("ÇëÊäÈë10¸öµØµãÃû(ÊäÈë0Ä¬ÈÏÎªA-J)£º");
 
-	printf("ä»%cåˆ°å…¶ä»–æ™¯ç‚¹çš„å°‘è·¯è´¹ä¸º:\n", g.Vertices.list[0]);
-	for (i = 0; i < n; ++i) {
-		printf("\tåˆ°%cçš„æœ€å°‘è·¯è´¹ä¸º%då…ƒ.\n", g.Vertices.list[i], distance[i]);
+	for (int i = 0; i < 10; ++i) {
+		printf("\nÇëÊäÈëµÚÒ»¸öµØµãµÄÃû³Æ£º");
+		gets(PlaceName[i]);
+		//ÅĞ¶ÏÊÇ·ñÊäÈëÎª¿Õ£¨Ò²¾ÍÊÇÖ±½Ó»Ø³µ£©£¬Èç¹ûÎª¿Õ¸³Öµ¸øÊı×é
+		if (PlaceName[i] == "0") {
+			PlaceName[i] = LetterCode;
+			LetterCode++;
+		}
+
+
 	}
 
-	printf("\nä»%cåˆ°å…¶ä»–æ™¯ç‚¹çš„å‰ä¸€åœ°ç‚¹ä¸º:\n", g.Vertices.list[0]);
-	for (i = 1; i < n; ++i) {
-		//PreviousPath(&g, path, i);
-		int Previous_Place, flag = i;
-		if (path[flag] != -1) {
-			printf("\tåˆ°æ™¯ç‚¹%cçš„è·¯å¾„ä¸º: %c", g.Vertices.list[i], g.Vertices.list[i]);
-			Previous_Place = path[flag];
-			while (Previous_Place != -1 ) {
-				printf("<-%c", g.Vertices.list[Previous_Place]);
-				Previous_Place = path[Previous_Place];
-			}
-		}
-		printf("\n");
+	for (int i = 0; i < MaxVertices; ++i) {
+		printf("%s",PlaceName[i]);
 	}
 }
