@@ -1,6 +1,6 @@
 #pragma once
 #include "SeqList.h"
-
+#include <stdio.h>
 typedef struct {
 	SeqList Vertices;
 	int edge[MaxVertices][MaxVertices];

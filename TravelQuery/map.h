@@ -1,36 +1,36 @@
+#pragma once
 #include <stdio.h>
 #include "AdjMGraph.h"
 #include "AdjMGraphCreate.h"
 
-//åˆ›å»º10ä¸ªåœ°ç‚¹
+//´´½¨10¸öµØµã
 void CreatePlace(char *PlaceName[MaxVertices]) {
 
-	int LetterCode = 65;//åˆ›å»ºè‹±æ–‡ç¼–ç ï¼Œaçš„ç¼–ç ä¸º65
-	printf("è¯·è¾“å…¥10ä¸ªåœ°ç‚¹å(å›è½¦é»˜è®¤ä¸ºA-J)ï¼š")
+	int LetterCode = 65;//´´½¨Ó¢ÎÄ±àÂë£¬aµÄ±àÂëÎª65
+	printf("ÇëÊäÈë10¸öµØµãÃû(ÊäÈë0Ä¬ÈÏÎªA-J)£º");
 
-	for (int i = 0; i < MaxVertices; ++i) {
-		printf("\nè¯·è¾“å…¥ç¬¬ä¸€ä¸ªåœ°ç‚¹çš„åç§°ï¼š")
+	for(int i = 0; i < MaxVertices; ++i) {
+		printf("\nÇëÊäÈëµÚÒ»¸öµØµãµÄÃû³Æ£º");
 		gets(PlaceName[i]);
-		//åˆ¤æ–­æ˜¯å¦è¾“å…¥ä¸ºç©ºï¼ˆä¹Ÿå°±æ˜¯ç›´æ¥å›è½¦ï¼‰ï¼Œå¦‚æœä¸ºç©ºèµ‹å€¼ç»™æ•°ç»„
-		if (PlaceName[i][0] == '\0') {
-			PlaceName[i][0] =
-			char(LetterCode);
+		//ÅĞ¶ÏÊÇ·ñÊäÈëÎª¿Õ£¨Ò²¾ÍÊÇÖ±½Ó»Ø³µ£©£¬Èç¹ûÎª¿Õ¸³Öµ¸øÊı×é
+		if (PlaceName[i][0] == '0') {
+			PlaceName[i][0] = LetterCode;
 			LetterCode++;
 		}
 	}
 
 }
 
-//åˆ›å»ºé‚»æ¥çŸ©é˜µ
+//´´½¨ÁÚ½Ó¾ØÕó
 int CreateAdjacencyMatrix(char *PlaceName[MaxVertices], RowColWeight AM[]) {
-	int flag = 1, i = 0, count = 14;//é»˜è®¤è·¯å¾„çš„æ¡æ•°
-	int whether = 0;//ç”¨äºæ•°å­—é€‰æ‹©
+	int i = 0, count = 14;//Ä¬ÈÏÂ·¾¶µÄÌõÊı
+	int whether = 0;//ÓÃÓÚÊı×ÖÑ¡Ôñ
 
-	printf("æ˜¯å¦é‡‡ç”¨é»˜è®¤è·¯å¾„?(1.yes/2.no):");
+	printf("ÊÇ·ñ²ÉÓÃÄ¬ÈÏÂ·¾¶?(1.yes/2.no):");
 	whether = getchar();
 
 	if (whether == 2) {
-		//åˆ›å»ºä¸€ä¸ªåˆå§‹å˜é‡AM_ç”¨äºç»™ä¼ å…¥çš„AMèµ‹å€¼
+		//´´½¨Ò»¸ö³õÊ¼±äÁ¿AM_ÓÃÓÚ¸ø´«ÈëµÄAM¸³Öµ
 		RowColWeight AM_[] = {
 				{0, 1, 2},
 				{0, 2, 3},
@@ -47,7 +47,7 @@ int CreateAdjacencyMatrix(char *PlaceName[MaxVertices], RowColWeight AM[]) {
 				{6, 9, 10},
 				{8, 9, 20},
 		};
-		//è¿›è¡Œèµ‹å€¼
+		//½øĞĞ¸³Öµ
 		for (int j = 0; j < count; ++j) {
 			AM[j] = AM_[j];
 		}
@@ -55,16 +55,15 @@ int CreateAdjacencyMatrix(char *PlaceName[MaxVertices], RowColWeight AM[]) {
 		return count;
 	}
 
-	count = 0;//åˆå§‹åŒ–è·¯å¾„æ¡æ•°
-	while (flag && i < MaxVertice) {
-		RowColWeight AM_[];
+	count = 0;//³õÊ¼»¯Â·¾¶ÌõÊı
+	while (i < MaxVertices) {
 		int row_ = i, col_ = 0, weight_ = 0;
-		printf("\nè¯·é€‰æ‹©%såˆ°å…¶å®ƒåœ°æ–¹çš„è·¯å¾„:\n(", PlaceName[i]);
+		printf("\nÇëÑ¡Ôñ%sµ½ÆäËüµØ·½µÄÂ·¾¶:\n(", PlaceName[i]);
 		for (int j = 0; j < MaxVertices - 1; ++j) {
 			if (j == i)continue;
 			printf("%d:%s,", j + 1, PlaceName[j]);
 		}
-		printf(")\n(è¾“å…¥0ç»“æŸè¿™æ¡è·¯å¾„çš„è¾“å…¥,è¾“å…¥99ç»“æŸæ‰€æœ‰è·¯å¾„çš„è¾“å…¥):");
+		printf(")\n(ÊäÈë0½áÊøÕâÌõÂ·¾¶µÄÊäÈë,ÊäÈë99½áÊøËùÓĞÂ·¾¶µÄÊäÈë):");
 
 		col_ = getchar();
 		if (whether == 0) {
@@ -73,14 +72,40 @@ int CreateAdjacencyMatrix(char *PlaceName[MaxVertices], RowColWeight AM[]) {
 		}
 		if (whether == 99)break;
 
-
-		printf("è¯·è¾“å…¥è¿™æ¡è·¯å¾„çš„èŠ±è´¹:");
+		printf("ÇëÊäÈëÕâÌõÂ·¾¶µÄ»¨·Ñ:");
 		weight_ = getchar();
 
-		AM_[i] = {row_, col_, weight_};//è¿›è¡Œèµ‹å€¼
-		count++;//å¢åŠ è·¯å¾„æ•°ç›®
+		RowColWeight AM_ = {row_, col_, weight_};
+		AM[i] = AM_;//½øĞĞ¸³Öµ
+		count++;//Ôö¼ÓÂ·¾¶ÊıÄ¿
 	}
 
 	return count;
 }
 
+//´òÓ¡¿ªÏú
+void print_cost(AdjMGraph g_, int distance_[MaxVertices]){
+	printf("´Ó%sµ½ÆäËû¾°µãµÄÉÙÂ··ÑÎª:\n", g_.Vertices.list[0]);
+	for (int i = 0; i < MaxVertices; ++i) {
+		printf("\tµ½%sµÄ×îÉÙÂ··ÑÎª%dÔª.\n", g_.Vertices.list[i], distance_[i]);
+	}
+}
+
+
+//´òÓ¡×î¶ÌÂ·¾¶
+void print_path(AdjMGraph g_,const int path_[]){
+	int n = MaxVertices;
+	printf("\n´Ó%sµ½ÆäËû¾°µãµÄÇ°Ò»µØµãÎª:\n", g_.Vertices.list[0]);
+	for (int i = 1; i < n; ++i) {
+		int Previous_Place, flag = i;
+		if (path_[flag] != -1) {
+			printf("\tµ½¾°µã%sµÄÂ·¾¶Îª: %s", g_.Vertices.list[i], g_.Vertices.list[i]);
+			Previous_Place = path_[flag];
+			while (Previous_Place != -1 ) {
+				printf("<-%s", g_.Vertices.list[Previous_Place]);
+				Previous_Place = path_[Previous_Place];
+			}
+		}
+		printf("\n");
+	}
+}

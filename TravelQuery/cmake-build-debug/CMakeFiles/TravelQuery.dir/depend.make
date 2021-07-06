@@ -6,4 +6,5 @@ CMakeFiles/TravelQuery.dir/main.c.obj: ../AdjMGraphCreate.h
 CMakeFiles/TravelQuery.dir/main.c.obj: ../Dijkstra.h
 CMakeFiles/TravelQuery.dir/main.c.obj: ../SeqList.h
 CMakeFiles/TravelQuery.dir/main.c.obj: ../main.c
+CMakeFiles/TravelQuery.dir/main.c.obj: ../map.h
 

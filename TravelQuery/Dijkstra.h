@@ -1,4 +1,4 @@
-
+#pragma once
 void Dijkstra(AdjMGraph G, int v0, int distance[], int path[]) {
 	//v0 to other place shortest distance
 	int n = G.Vertices.size;
