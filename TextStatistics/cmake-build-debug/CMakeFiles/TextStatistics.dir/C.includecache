@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/SeqList.h
+
+E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/main.c
+stdio.h
+-
+SeqList.h
+E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/SeqList.h
+
