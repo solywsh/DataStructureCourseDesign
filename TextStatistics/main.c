@@ -1,44 +1,46 @@
 #include <stdio.h>
-#include "r.h"
 
 #define MaxSize 1000
 typedef char DataType;
 
 #include "SeqList.h"
 
-char *r_chinese = "[\\u4e00-\\u9fa5]";//ä¸­æ–‡æ­£åˆ™è¡¨è¾¾å¼
-char *r_english = "[A-Za-z]";//è‹±æ–‡æ­£åˆ™è¡¨è¾¾å¼
-char *r_number = "[0-9]";//æ•°å­—æ­£åˆ™è¡¨è¾¾å¼
-char *r_space = "\\s";//ç©ºæ ¼æ­£åˆ™è¡¨è¾¾å¼
 
 int main(void) {
+
 	SeqList myList;
-	char word[1000] = "ahrfu32312 ihfuæ”¾  å¤§æ—¶I12 23123312Få¥½å—å¾ˆ111 123212331å¤šfo iuè‚ºç™Œé£è¿˜123æ˜¯ç¬¦å·æ¡ˆå‘åå•Šæ“¦æ‹­å¥½éš¾çœ‹";
+	char *word = "dasjdg123usaig°´gdyagµÄ  ¹æ¶¨UI  °¡¹«Ë¾¸ÅÊöa312312gfduiagdi  °ÂÊıµÄ¹ÒÊÎ¹æ¶¨UI°¡ÉÏµ¥ydg2132189361 ";
 	int TotalWords = 0, CN_number = 0, EN_number = 0, NUM_number = 0, SPA_number = 0;
 
-//	printf("è¯·è¾“å…¥ä¸€æ®µæ–‡å­—ï¼š");
+//	printf("ÇëÊäÈëÒ»¶ÎÎÄ×Ö£º");
 //	scanf("%s",word);
 
-	//åˆå§‹åŒ–å¹¶æŠŠå­—ç¬¦ä¸²ä¼ å…¥é¡ºåºè¡¨
+	//³õÊ¼»¯²¢°Ñ×Ö·û´®´«ÈëË³Ğò±í
 	ListInitiate(&myList);
 	for (int i = 0; word[i] != '\0'; ++i) {
 		ListInsert(&myList, i, word[i]);
 	}
+	printf("\n");
 
-	char temporary;//å®šä¹‰ä¸€ä¸ªä¸´æ—¶å˜é‡
-	//geté¡ºåºè¡¨çš„å†…å®¹ï¼Œå¯¹æ¯ä¸ªå­—ç¬¦è¿›è¡Œæ£€æŸ¥
+	char temporary;//¶¨ÒåÒ»¸öÁÙÊ±±äÁ¿
+	//getË³Ğò±íµÄÄÚÈİ£¬¶ÔÃ¿¸ö×Ö·û½øĞĞ¼ì²é
 	for (int i = 0; i < ListLength(myList); i++) {
 		ListGet(myList, i, &temporary);
-		CN_number += r(&temporary, r_chinese);
-		EN_number += r(&temporary, r_english);
-		EN_number += r(&temporary, r_number);
-		SPA_number += r(&temporary, r_space);
+		printf("%c", temporary);
+
+		if (temporary == 32)SPA_number++;
+		if ((unsigned char) temporary > 127) CN_number++;
+		if (temporary >= 48&&temporary<=57 ) NUM_number++;
+		if ((temporary >= 97 && temporary <= 122) || (temporary >= 65 && temporary <= 90))EN_number++;
 		TotalWords++;
 	}
-	
-	printf("æ€»å­—æ•°ï¼š%d\n",TotalWords);
-	printf("ä¸­æ–‡å­—æ•°ï¼š%d\n",CN_number);
-	printf("è‹±æ–‡å­—æ•°ï¼š%d",EN_number);
-	printf("æ•°å­—å­—æ•°ï¼š%d",NUM_number);
-	printf("ç©ºæ ¼å­—æ•°ï¼š%d",CN_number);
+	printf("\n");
+    printf("×Ü×ÖÊı£º%d\n", TotalWords);
+	printf("ÖĞÎÄ×ÖÊı£º%d\n", CN_number / 2);
+	printf("Ó¢ÎÄ×ÖÊı£º%d\n", EN_number);
+    printf("Êı×Ö×ÖÊı£º%d\n", NUM_number);
+    printf("¿Õ¸ñ×ÖÊı£º%d\n", SPA_number);
+	return 0;
 }
+
+

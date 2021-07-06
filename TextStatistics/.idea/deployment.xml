@@ -5,11 +5,8 @@
       <paths name="腾讯服务器 (80f45728-01d2-47ca-b3b4-a5f5e4bad983)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.YDK6lCKBhz" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
-          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
