@@ -4,7 +4,7 @@
 #include "AdjMGraphCreate.h"
 
 //创建10个地点
-void CreatePlace(char *PlaceName[MaxVertices]) {
+void CreatePlace(char PlaceName[MaxVertices][100]) {
 
 	int LetterCode = 65;//创建英文编码，a的编码为65
 	printf("请输入10个地点名(输入0默认为A-J)：");
@@ -15,6 +15,8 @@ void CreatePlace(char *PlaceName[MaxVertices]) {
 		//判断是否输入为空（也就是直接回车），如果为空赋值给数组
 		if (PlaceName[i][0] == '0') {
 			PlaceName[i][0] = LetterCode;
+			//在赋值完之后会出现后面跟着乱码的情况，为了以防万一，增加一个结束标志
+			PlaceName[i][1] = '\0';
 			LetterCode++;
 		}
 	}
@@ -22,7 +24,7 @@ void CreatePlace(char *PlaceName[MaxVertices]) {
 }
 
 //创建邻接矩阵
-int CreateAdjacencyMatrix(char *PlaceName[MaxVertices], RowColWeight AM[]) {
+int CreateAdjacencyMatrix(char PlaceName[MaxVertices][100], RowColWeight AM[]) {
 	int i = 0, count = 14;//默认路径的条数
 	int whether = 0;//用于数字选择
 

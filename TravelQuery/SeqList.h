@@ -1,4 +1,5 @@
 #pragma once
+#include <stdio.h>
 typedef struct {
 	DataType list[MaxSize];
 	int size;
