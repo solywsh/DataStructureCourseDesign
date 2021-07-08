@@ -1,4 +1,0 @@
-
-int void(char *,char *){
-
-}

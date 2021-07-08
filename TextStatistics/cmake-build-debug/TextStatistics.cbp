@@ -77,9 +77,6 @@
 		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/main.c">
 			<Option target="TextStatistics"/>
 		</Unit>
-		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/r.h">
-			<Option target="TextStatistics"/>
-		</Unit>
 		<Unit filename="E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

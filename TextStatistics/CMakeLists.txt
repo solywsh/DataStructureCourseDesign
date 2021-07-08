@@ -3,4 +3,4 @@ project(TextStatistics C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(TextStatistics main.c r.h)
+add_executable(TextStatistics main.c)
