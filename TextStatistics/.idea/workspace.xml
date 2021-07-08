@@ -11,20 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment="删除r.h">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment="增加r.h">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeqList.h" beforeDir="false" afterPath="$PROJECT_DIR$/SeqList.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/r.h" beforeDir="false" afterPath="$PROJECT_DIR$/r.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +37,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d0893d8f-5f6f-47dc-a548-beb03c8c3192" />
+        <option name="url" value="git@github.com:solywsh/DataStructureCourseDesign.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectId" id="1uv7rNgoYWjZ1UcHLpM0fJQFplY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -105,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625539262212</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="增加r.h">
+      <created>1625752010001</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625752010001</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成主要功能" />
     <MESSAGE value="add gets()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gets()" />
+    <MESSAGE value="增加r.h" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加r.h" />
   </component>
 </project>

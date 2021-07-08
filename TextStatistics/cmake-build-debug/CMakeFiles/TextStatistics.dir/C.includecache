@@ -11,6 +11,10 @@ E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/SeqList.h
 E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/main.c
 stdio.h
 -
+stdlib.h
+-
+string.h
+-
 SeqList.h
 E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/SeqList.h
 r.h
@@ -21,4 +25,6 @@ stdio.h
 -
 SeqList.h
 E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/SeqList.h
+string.h
+-
 

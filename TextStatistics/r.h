@@ -1,24 +1,36 @@
 #pragma once
 #include <stdio.h>
 #include "SeqList.h"
+#include <string.h>
 
 typedef struct {
 	int ALL_number, CN_number, EN_number, NUM_number, SPA_number;
 	char all_words[100], cn_words[100], en_words[100], num_words[1000];
 } TextInformation;
 
-void TextCheck(SeqList myList_, TextInformation *tl_) {
+//初始化
+void TextInformationInitiate(TextInformation *tl_) {
 
-	//初始化
 	tl_->ALL_number = 0;
 	tl_->CN_number = 0;
 	tl_->EN_number = 0;
 	tl_->NUM_number = 0;
 	tl_->SPA_number = 0;
 
-	char temporary;//定义一个临时变量
-	//get顺序表的内容，对每个字符进行检查
+	strcpy(tl_->all_words,"\0");
+	strcpy(tl_->cn_words,"\0");
+	strcpy(tl_->en_words,"\0");
+	strcpy(tl_->num_words,"\0");
 
+}
+
+
+void TextCheck(SeqList myList_, TextInformation *tl_) {
+	//初始化
+	TextInformationInitiate(tl_);
+	//定义一个临时变量
+	char temporary;
+	//get顺序表的内容，对每个字符进行检查
 	for (int i = 0; i < ListLength(myList_); i++) {
 		ListGet(myList_, i, &temporary);
 		//printf("%c", temporary);//对读取的字符进行输出
