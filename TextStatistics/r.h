@@ -1,5 +1,4 @@
 #pragma once
-
 #include <stdio.h>
 #include "SeqList.h"
 
@@ -10,57 +9,57 @@ typedef struct {
 
 void TextCheck(SeqList myList_, TextInformation *tl_) {
 
-	//åˆå§‹åŒ–
+	//³õÊ¼»¯
 	tl_->ALL_number = 0;
 	tl_->CN_number = 0;
 	tl_->EN_number = 0;
 	tl_->NUM_number = 0;
 	tl_->SPA_number = 0;
 
-	char temporary;//å®šä¹‰ä¸€ä¸ªä¸´æ—¶å˜é‡
-	//geté¡ºåºè¡¨çš„å†…å®¹ï¼Œå¯¹æ¯ä¸ªå­—ç¬¦è¿›è¡Œæ£€æŸ¥
+	char temporary;//¶¨ÒåÒ»¸öÁÙÊ±±äÁ¿
+	//getË³Ğò±íµÄÄÚÈİ£¬¶ÔÃ¿¸ö×Ö·û½øĞĞ¼ì²é
 
 	for (int i = 0; i < ListLength(myList_); i++) {
 		ListGet(myList_, i, &temporary);
-		//printf("%c", temporary);//å¯¹è¯»å–çš„å­—ç¬¦è¿›è¡Œè¾“å‡º
-		//åˆ¤æ–­æ˜¯å¦ä¸ºç©ºæ ¼
+		//printf("%c", temporary);//¶Ô¶ÁÈ¡µÄ×Ö·û½øĞĞÊä³ö
+		//ÅĞ¶ÏÊÇ·ñÎª¿Õ¸ñ
 		if (temporary == 32) {
 			tl_->SPA_number++;
-			//æ€»å­—æ•°
+			//×Ü×ÖÊı
 			tl_->all_words[tl_->ALL_number] = temporary;
 			tl_->ALL_number++;
 			continue;
 		}
-		//åˆ¤æ–­æ˜¯å¦ä¸ºä¸­æ–‡ï¼ŒCè¯­è¨€å¤„ç†ä¸­æ–‡æ—¶ï¼ŒGBKç ä¼šè½¬åŒ–ä¸ºè´Ÿæ•°ï¼Œç„¶åç”¨unsignedå¤„ç†ä¸ºè¶…è¿‡127çš„ç¼–ç 
+		//ÅĞ¶ÏÊÇ·ñÎªÖĞÎÄ£¬CÓïÑÔ´¦ÀíÖĞÎÄÊ±£¬GBKÂë»á×ª»¯Îª¸ºÊı£¬È»ºóÓÃunsigned´¦ÀíÎª³¬¹ı127µÄ±àÂë
 		if ((unsigned char) temporary > 127) {
 			tl_->cn_words[tl_->CN_number] = temporary;
 			tl_->CN_number++;
-			//æ€»å­—æ•°
+			//×Ü×ÖÊı
 			tl_->all_words[tl_->ALL_number] = temporary;
 			tl_->ALL_number++;
 			continue;
 		}
-		//åˆ¤æ–­æ•°å­—
+		//ÅĞ¶ÏÊı×Ö
 		if (temporary >= 48 && temporary <= 57) {
 			tl_->num_words[tl_->NUM_number] = temporary;
 			tl_->NUM_number++;
-			//æ€»å­—æ•°
+			//×Ü×ÖÊı
 			tl_->all_words[tl_->ALL_number] = temporary;
 			tl_->ALL_number++;
 			continue;
 		}
-		//åˆ¤æ–­è‹±æ–‡ï¼Œåˆ†ä¸ºa-zï¼ŒA-Z
+		//ÅĞ¶ÏÓ¢ÎÄ£¬·ÖÎªa-z£¬A-Z
 		if ((temporary >= 97 && temporary <= 122) || (temporary >= 65 && temporary <= 90)) {
 			tl_->en_words[tl_->EN_number] = temporary;
 			tl_->EN_number++;
-			//æ€»å­—æ•°
+			//×Ü×ÖÊı
 			tl_->all_words[tl_->ALL_number] = temporary;
 			tl_->ALL_number++;
 			continue;
 		}
 	}
 
-	//å¯¹å­—ç¬¦ä¸²æ·»åŠ ç»“æŸç¬¦å·ï¼Œä»¥é˜²æ­¢å‡ºç°æœ‰æœªåˆå§‹åŒ–çš„å†…å­˜å¯¼è‡´æœ«å°¾æœ‰ä¹±ç çš„æƒ…å†µ
+	//¶Ô×Ö·û´®Ìí¼Ó½áÊø·ûºÅ£¬ÒÔ·ÀÖ¹³öÏÖÓĞÎ´³õÊ¼»¯µÄÄÚ´æµ¼ÖÂÄ©Î²ÓĞÂÒÂëµÄÇé¿ö
 	tl_->all_words[tl_->ALL_number] = '\0';
 	tl_->cn_words[tl_->CN_number] = '\0';
 	tl_->en_words[tl_->EN_number] = '\0';
@@ -71,10 +70,10 @@ void TextCheck(SeqList myList_, TextInformation *tl_) {
 void TextPrint(TextInformation tl_){
 
 	printf("\n");
-	printf("æ€»å­—æ•°ï¼š%d\n%s\n", tl_.ALL_number, tl_.all_words);
-	printf("ä¸­æ–‡å­—æ•°ï¼š%d\n%s\n", tl_.CN_number / 2, tl_.cn_words);
-	printf("è‹±æ–‡å­—æ•°ï¼š%d\n%s\n", tl_.EN_number, tl_.en_words);
-	printf("æ•°å­—å­—æ•°ï¼š%d\n%s\n", tl_.NUM_number, tl_.num_words);
-	printf("ç©ºæ ¼å­—æ•°ï¼š%d\n", tl_.SPA_number);
+	printf("×Ü×ÖÊı£º%d\n%s\n", tl_.ALL_number, tl_.all_words);
+	printf("ÖĞÎÄ×ÖÊı£º%d\n%s\n", tl_.CN_number / 2, tl_.cn_words);
+	printf("Ó¢ÎÄ×ÖÊı£º%d\n%s\n", tl_.EN_number, tl_.en_words);
+	printf("Êı×Ö×ÖÊı£º%d\n%s\n", tl_.NUM_number, tl_.num_words);
+	printf("¿Õ¸ñ×ÖÊı£º%d\n", tl_.SPA_number);
 
 }

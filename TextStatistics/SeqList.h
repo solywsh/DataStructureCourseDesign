@@ -15,10 +15,10 @@ int ListLength(SeqList L) {
 int ListInsert(SeqList *L, int i, DataType x) {
 	int j;
 	if (L->size >= MaxSize) {
-		printf("椤哄簭琛ㄥ凡婊℃棤娉曟彃鍏ワ紒\n");
+		printf("顺序表已满无法插入！\n");
 		return 0;
 	} else if (i < 0 || i > L->size) {
-		printf("鍙傛暟i涓嶅悎娉曪紒\n");
+		printf("参数i不合法！\n");
 		return 0;
 	} else {
 		for (j = L->size; j > i; j--) {
@@ -33,10 +33,10 @@ int ListInsert(SeqList *L, int i, DataType x) {
 int ListDelete(SeqList *L, int i, DataType *x) {
 	int j;
 	if (L->size <= 0) {
-		printf("椤哄簭琛ㄥ凡绌烘棤鏁版嵁鍏冪礌鍙垹锛乗n");
+		printf("顺序表已空无数据元素可删！\n");
 		return 0;
 	} else if (i < 0 || i > L->size - 1) {
-		printf("鍙傛暟i涓嶅悎娉曪紒\n");
+		printf("参数i不合法！\n");
 		return 0;
 	} else {
 		*x = L->list[i];
@@ -50,7 +50,7 @@ int ListDelete(SeqList *L, int i, DataType *x) {
 
 int ListGet(SeqList L, int i, DataType *x) {
 	if (i < 0 || i > L.size - 1) {
-		printf("鍙傛暟i涓嶅悎娉曪紒\n");
+		printf("参数i不合法！\n");
 		return 0;
 	} else {
 		*x = L.list[i];

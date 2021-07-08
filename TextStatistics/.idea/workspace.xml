@@ -11,21 +11,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment="add gets()">
-      <change afterPath="$PROJECT_DIR$/../TravelQuery/code.txt" afterDir="false" />
+    <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment="删除r.h">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeqList.h" beforeDir="false" afterPath="$PROJECT_DIR$/SeqList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/r.h" beforeDir="false" afterPath="$PROJECT_DIR$/r.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/TravelQuery.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/TravelQuery.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +36,17 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="func" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1uv7rNgoYWjZ1UcHLpM0fJQFplY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

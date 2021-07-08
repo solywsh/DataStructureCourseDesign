@@ -3,4 +3,5 @@
 
 CMakeFiles/TextStatistics.dir/main.c.obj: ../SeqList.h
 CMakeFiles/TextStatistics.dir/main.c.obj: ../main.c
+CMakeFiles/TextStatistics.dir/main.c.obj: ../r.h
 
