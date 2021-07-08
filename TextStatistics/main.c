@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #define MaxSize 1000
 typedef char DataType;
 #include "SeqList.h"
@@ -22,29 +23,7 @@ int main(void) {
 	}
 	printf("\n");
 
-	char temporary;//定义一个临时变量
-	//get顺序表的内容，对每个字符进行检查
-	for (int i = 0; i < ListLength(myList); i++) {
-		ListGet(myList, i, &temporary);
-		printf("%c", temporary);//对读取的字符进行输出
-		//判断是否为空格
-		if (temporary == 32)SPA_number++;
-		//判断是否为中文，C语言处理中文时，GBK码会转化为负数，然后用unsigned处理为超过127的编码
-		if ((unsigned char) temporary > 127) CN_number++;
-		//判断数字
-		if (temporary >= 48&&temporary<=57 ) NUM_number++;
-		//判断英文，分为a-z，A-Z
-		if ((temporary >= 97 && temporary <= 122) || (temporary >= 65 && temporary <= 90))EN_number++;
-		//总字数
-		TotalWords++;
-	}
 
-	printf("\n");
-	printf("总字数：%d\n", TotalWords);
-	printf("中文字数：%d\n", CN_number / 2);
-	printf("英文字数：%d\n", EN_number);
-	printf("数字字数：%d\n", NUM_number);
-	printf("空格字数：%d\n", SPA_number);
 
 	return 0;
 }

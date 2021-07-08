@@ -1,0 +1,301 @@
+Index: main.c
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#include <stdio.h>\r\n#define MaxSize 1000\r\ntypedef char DataType;\r\n#include \"SeqList.h\"\r\n\r\n\r\nint main(void) {\r\n\r\n\tSeqList myList;\r\n\t//测试用\r\n\t//char *word = \"一个幽灵，共产主义的幽灵，在欧洲游荡。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。A ghost, the ghost of communism, wanders Europe. In order to carry out a sacred encirclement and suppression of this ghost, all the powers of old Europe, the Pope and the Tsar, Metternich and Kizo, the French radicals and the German police, united.\";\r\n\tchar word[MaxSize]=\"\\0\";\r\n\tint TotalWords = 0, CN_number = 0, EN_number = 0, NUM_number = 0, SPA_number = 0;\r\n\tchar all_words[100], cn_words[100], en_words[100],num_words[1000];\r\n\r\n\tprintf(\"请输入一段文字：\");\r\n\tgets(word);\r\n\r\n\t//初始化并把字符串传入顺序表\r\n\tListInitiate(&myList);\r\n\tfor (int i = 0; word[i] != '\\0'; ++i) {\r\n\t\tListInsert(&myList, i, word[i]);\r\n\t}\r\n\tprintf(\"\\n\");\r\n\r\n\tchar temporary;//定义一个临时变量\r\n\t//get顺序表的内容，对每个字符进行检查\r\n\tfor (int i = 0; i < ListLength(myList); i++) {\r\n\t\tListGet(myList, i, &temporary);\r\n\t\t//printf(\"%c\", temporary);//对读取的字符进行输出\r\n\t\t//判断是否为空格\r\n\t\tif (temporary == 32){\r\n\t\t\tSPA_number++;\r\n\t\t\t//总字数\r\n\t\t\tall_words[TotalWords] = temporary;\r\n\t\t\tTotalWords++;\r\n\t\t\tcontinue;\r\n\t\t}\r\n\t\t//判断是否为中文，C语言处理中文时，GBK码会转化为负数，然后用unsigned处理为超过127的编码\r\n\t\tif ((unsigned char) temporary > 127) {\r\n\t\t\tcn_words[CN_number] = temporary;\r\n\t\t\tCN_number++;\r\n\t\t\t//总字数\r\n\t\t\tall_words[TotalWords] = temporary;\r\n\t\t\tTotalWords++;\r\n\t\t\tcontinue;\r\n\t\t}\r\n\t\t//判断数字\r\n\t\tif (temporary >= 48&&temporary<=57 ) {\r\n\t\t\tnum_words[NUM_number] = temporary;\r\n\t\t\tNUM_number++;\r\n\t\t\t//总字数\r\n\t\t\tall_words[TotalWords] = temporary;\r\n\t\t\tTotalWords++;\r\n\t\t}\r\n\t\t//判断英文，分为a-z，A-Z\r\n\t\tif ((temporary >= 97 && temporary <= 122) || (temporary >= 65 && temporary <= 90)){\r\n\t\t\ten_words[EN_number] = temporary;\r\n\t\t\tEN_number++;\r\n\t\t\t//总字数\r\n\t\t\tall_words[TotalWords] = temporary;\r\n\t\t\tTotalWords++;\r\n\t\t}\r\n\r\n\t}\r\n\r\n\tprintf(\"\\n\");\r\n\tprintf(\"总字数：%d\\n%s\\n\", TotalWords,all_words);\r\n\tprintf(\"中文字数：%d\\n%s\\n\", CN_number / 2,cn_words);\r\n\tprintf(\"英文字数：%d\\n%s\\n\", EN_number,en_words);\r\n\tprintf(\"数字字数：%d\\n%s\\n\", NUM_number,num_words);\r\n\tprintf(\"空格字数：%d\\n\", SPA_number);\r\n\r\n\treturn 0;\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+diff --git a/main.c b/main.c
+--- a/main.c	
++++ b/main.c	
+@@ -1,18 +1,21 @@
+ #include <stdio.h>
++#include <stdlib.h>
++
+ #define MaxSize 1000
+ typedef char DataType;
++
+ #include "SeqList.h"
++#include "r.h"
+ 
+ 
+ int main(void) {
+-
++	//创建一个顺序表
+ 	SeqList myList;
++	//创建一个统计文字信息的结构体
++	TextInformation tl;
+ 	//测试用
+ 	//char *word = "一个幽灵，共产主义的幽灵，在欧洲游荡。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。A ghost, the ghost of communism, wanders Europe. In order to carry out a sacred encirclement and suppression of this ghost, all the powers of old Europe, the Pope and the Tsar, Metternich and Kizo, the French radicals and the German police, united.";
+-	char word[MaxSize]="\0";
+-	int TotalWords = 0, CN_number = 0, EN_number = 0, NUM_number = 0, SPA_number = 0;
+-	char all_words[100], cn_words[100], en_words[100],num_words[1000];
+-
++	char word[MaxSize] = "\0";
+ 	printf("请输入一段文字：");
+ 	gets(word);
+ 
+@@ -21,56 +24,8 @@
+ 	for (int i = 0; word[i] != '\0'; ++i) {
+ 		ListInsert(&myList, i, word[i]);
+ 	}
+-	printf("\n");
+-
+-	char temporary;//定义一个临时变量
+-	//get顺序表的内容，对每个字符进行检查
+-	for (int i = 0; i < ListLength(myList); i++) {
+-		ListGet(myList, i, &temporary);
+-		//printf("%c", temporary);//对读取的字符进行输出
+-		//判断是否为空格
+-		if (temporary == 32){
+-			SPA_number++;
+-			//总字数
+-			all_words[TotalWords] = temporary;
+-			TotalWords++;
+-			continue;
+-		}
+-		//判断是否为中文，C语言处理中文时，GBK码会转化为负数，然后用unsigned处理为超过127的编码
+-		if ((unsigned char) temporary > 127) {
+-			cn_words[CN_number] = temporary;
+-			CN_number++;
+-			//总字数
+-			all_words[TotalWords] = temporary;
+-			TotalWords++;
+-			continue;
+-		}
+-		//判断数字
+-		if (temporary >= 48&&temporary<=57 ) {
+-			num_words[NUM_number] = temporary;
+-			NUM_number++;
+-			//总字数
+-			all_words[TotalWords] = temporary;
+-			TotalWords++;
+-		}
+-		//判断英文，分为a-z，A-Z
+-		if ((temporary >= 97 && temporary <= 122) || (temporary >= 65 && temporary <= 90)){
+-			en_words[EN_number] = temporary;
+-			EN_number++;
+-			//总字数
+-			all_words[TotalWords] = temporary;
+-			TotalWords++;
+-		}
+ 
+-	}
+-
+-	printf("\n");
+-	printf("总字数：%d\n%s\n", TotalWords,all_words);
+-	printf("中文字数：%d\n%s\n", CN_number / 2,cn_words);
+-	printf("英文字数：%d\n%s\n", EN_number,en_words);
+-	printf("数字字数：%d\n%s\n", NUM_number,num_words);
+-	printf("空格字数：%d\n", SPA_number);
+-
++	system("pause");
+ 	return 0;
+ }
+ 
+Index: cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#IncludeRegexLine: ^[ \t]*[#%][ \t]*(include|import)[ \t]*[<\"]([^\">]+)([\">])\r\n\r\n#IncludeRegexScan: ^.*$\r\n\r\n#IncludeRegexComplain: ^$\r\n\r\n#IncludeRegexTransform: \r\n\r\nE:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/SeqList.h\r\n\r\nE:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/main.c\r\nstdio.h\r\n-\r\nSeqList.h\r\nE:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/SeqList.h\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache b/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache
+--- a/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache	
++++ b/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache	
+@@ -11,6 +11,8 @@
+ E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/main.c
+ stdio.h
+ -
++stdlib.h
++-
+ SeqList.h
+ E:/MyProgram/school/DataStructure/CourseDesign/TextStatistics/SeqList.h
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CMakeRunConfigurationManager\" shouldGenerate=\"true\" shouldDeleteObsolete=\"true\">\r\n    <generated>\r\n      <config projectName=\"TextStatistics\" targetName=\"TextStatistics\" />\r\n    </generated>\r\n  </component>\r\n  <component name=\"CMakeSettings\" AUTO_RELOAD=\"true\">\r\n    <configurations>\r\n      <configuration PROFILE_NAME=\"Debug\" CONFIG_NAME=\"Debug\" ENABLED=\"true\" />\r\n    </configurations>\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"87bc076c-de40-414b-8424-256a486f9e15\" name=\"默认变更列表\" comment=\" 添加打印\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/CMakeLists.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/CMakeLists.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/cmake-build-debug/TextStatistics.cbp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/cmake-build-debug/TextStatistics.cbp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/r.h\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ClangdSettings\">\r\n    <option name=\"formatViaClangd\" value=\"false\" />\r\n  </component>\r\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"CMakeBuildProfile:Debug\" />\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1uv7rNgoYWjZ1UcHLpM0fJQFplY\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.cidr.known.project.marker\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.mappings\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.highlight.symlinks\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.date\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.permissions\" value=\"false\" />\r\n    <property name=\"WebServerToolWindowPanel.toolwindow.show.size\" value=\"false\" />\r\n    <property name=\"cf.first.check.clang-format\" value=\"false\" />\r\n    <property name=\"cidr.known.project.marker\" value=\"true\" />\r\n    <property name=\"cmake.loaded.for.project\" value=\"true\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"File.Encoding\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration default=\"true\" type=\"CLionExternalRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\">\r\n      <method v=\"2\">\r\n        <option name=\"CLION.EXTERNAL.BUILD\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TextStatistics\" type=\"CMakeRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\" PROJECT_NAME=\"TextStatistics\" TARGET_NAME=\"TextStatistics\" CONFIG_NAME=\"Debug\" RUN_TARGET_PROJECT_NAME=\"TextStatistics\" RUN_TARGET_NAME=\"TextStatistics\">\r\n      <method v=\"2\">\r\n        <option name=\"com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"GradleAppRunConfiguration\" factoryName=\"Application\" REDIRECT_INPUT=\"false\" ELEVATE=\"false\" USE_EXTERNAL_CONSOLE=\"false\" PASS_PARENT_ENVS_2=\"true\">\r\n      <method v=\"2\">\r\n        <option name=\"com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\r\n      <changelist id=\"87bc076c-de40-414b-8424-256a486f9e15\" name=\"默认变更列表\" comment=\"\" />\r\n      <created>1625534408451</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1625534408451</updated>\r\n      <workItem from=\"1625534410765\" duration=\"578000\" />\r\n      <workItem from=\"1625535005358\" duration=\"7299000\" />\r\n      <workItem from=\"1625620286117\" duration=\"2958000\" />\r\n      <workItem from=\"1625646465359\" duration=\"909000\" />\r\n      <workItem from=\"1625706258418\" duration=\"374000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"完成主要功能\">\r\n      <created>1625538184665</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625538184665</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"add gets()\">\r\n      <created>1625539262212</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625539262212</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\" 添加打印\">\r\n      <created>1625646366254</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625646366254</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"完成主要功能\" />\r\n    <MESSAGE value=\"add gets()\" />\r\n    <MESSAGE value=\" 添加打印\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\" 添加打印\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -11,12 +11,16 @@
+     </configurations>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment=" 添加打印">
++    <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment="删除r.h">
++      <change afterPath="$PROJECT_DIR$/r.h" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/C.includecache" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.cbp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/r.h" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -28,6 +32,19 @@
+   </component>
+   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+   <component name="Git.Settings">
++    <favorite-branches>
++      <branch-storage>
++        <map>
++          <entry type="LOCAL">
++            <value>
++              <list>
++                <branch-info repo="$PROJECT_DIR$/.." source="main" />
++              </list>
++            </value>
++          </entry>
++        </map>
++      </branch-storage>
++    </favorite-branches>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+   </component>
+   <component name="ProjectId" id="1uv7rNgoYWjZ1UcHLpM0fJQFplY" />
+@@ -66,9 +83,9 @@
+         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
++    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+       <method v="2">
+-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
++        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+       </method>
+     </configuration>
+   </component>
+@@ -84,7 +101,9 @@
+       <workItem from="1625535005358" duration="7299000" />
+       <workItem from="1625620286117" duration="2958000" />
+       <workItem from="1625646465359" duration="909000" />
+-      <workItem from="1625706258418" duration="374000" />
++      <workItem from="1625706258418" duration="410000" />
++      <workItem from="1625706766703" duration="2614000" />
++      <workItem from="1625746878506" duration="4008000" />
+     </task>
+     <task id="LOCAL-00001" summary="完成主要功能">
+       <created>1625538184665</created>
+@@ -107,7 +126,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1625646366254</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="删除r.h">
++      <created>1625706655606</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1625706655606</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -130,6 +156,7 @@
+     <MESSAGE value="完成主要功能" />
+     <MESSAGE value="add gets()" />
+     <MESSAGE value=" 添加打印" />
+-    <option name="LAST_COMMIT_MESSAGE" value=" 添加打印" />
++    <MESSAGE value="删除r.h" />
++    <option name="LAST_COMMIT_MESSAGE" value="删除r.h" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: r.h
+===================================================================
+diff --git a/r.h b/r.h
+new file mode 100644
+--- /dev/null	
++++ b/r.h	
+@@ -0,0 +1,80 @@
++#pragma once
++
++#include <stdio.h>
++#include "SeqList.h"
++
++typedef struct {
++	int ALL_number, CN_number, EN_number, NUM_number, SPA_number;
++	char all_words[100], cn_words[100], en_words[100], num_words[1000];
++} TextInformation;
++
++void TextCheck(SeqList myList_, TextInformation *tl_) {
++
++	//初始化
++	tl_->ALL_number = 0;
++	tl_->CN_number = 0;
++	tl_->EN_number = 0;
++	tl_->NUM_number = 0;
++	tl_->SPA_number = 0;
++
++	char temporary;//定义一个临时变量
++	//get顺序表的内容，对每个字符进行检查
++
++	for (int i = 0; i < ListLength(myList_); i++) {
++		ListGet(myList_, i, &temporary);
++		//printf("%c", temporary);//对读取的字符进行输出
++		//判断是否为空格
++		if (temporary == 32) {
++			tl_->SPA_number++;
++			//总字数
++			tl_->all_words[tl_->ALL_number] = temporary;
++			tl_->ALL_number++;
++			continue;
++		}
++		//判断是否为中文，C语言处理中文时，GBK码会转化为负数，然后用unsigned处理为超过127的编码
++		if ((unsigned char) temporary > 127) {
++			tl_->cn_words[tl_->CN_number] = temporary;
++			tl_->CN_number++;
++			//总字数
++			tl_->all_words[tl_->ALL_number] = temporary;
++			tl_->ALL_number++;
++			continue;
++		}
++		//判断数字
++		if (temporary >= 48 && temporary <= 57) {
++			tl_->num_words[tl_->NUM_number] = temporary;
++			tl_->NUM_number++;
++			//总字数
++			tl_->all_words[tl_->ALL_number] = temporary;
++			tl_->ALL_number++;
++			continue;
++		}
++		//判断英文，分为a-z，A-Z
++		if ((temporary >= 97 && temporary <= 122) || (temporary >= 65 && temporary <= 90)) {
++			tl_->en_words[tl_->EN_number] = temporary;
++			tl_->EN_number++;
++			//总字数
++			tl_->all_words[tl_->ALL_number] = temporary;
++			tl_->ALL_number++;
++			continue;
++		}
++	}
++
++	//对字符串添加结束符号，以防止出现有未初始化的内存导致末尾有乱码的情况
++	tl_->all_words[tl_->ALL_number] = '\0';
++	tl_->cn_words[tl_->CN_number] = '\0';
++	tl_->en_words[tl_->EN_number] = '\0';
++	tl_->num_words[tl_->NUM_number] = '\0';
++
++}
++
++void TextPrint(TextInformation tl_){
++
++	printf("\n");
++	printf("总字数：%d\n%s\n", tl_.ALL_number, tl_.all_words);
++	printf("中文字数：%d\n%s\n", tl_.CN_number / 2, tl_.cn_words);
++	printf("英文字数：%d\n%s\n", tl_.EN_number, tl_.en_words);
++	printf("数字字数：%d\n%s\n", tl_.NUM_number, tl_.num_words);
++	printf("空格字数：%d\n", tl_.SPA_number);
++
++}
