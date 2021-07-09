@@ -1,6 +1,6 @@
 #pragma once
 void Dijkstra(AdjMGraph G, int v0, int distance[], int path[]) {
-	//v0 to other place shortest distance
+	//v0到其他地方的最低花费distance，以及路径path
 	int n = G.Vertices.size;
 	int *s = (int *) malloc(sizeof(int) * n);
 	int minDis, i, j, u;

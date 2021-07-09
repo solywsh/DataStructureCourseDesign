@@ -25,6 +25,10 @@ stdio.h
 E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/main.c
 malloc.h
 -
+stdio.h
+-
+stdlib.h
+-
 AdjMGraph.h
 E:/MyProgram/school/DataStructure/CourseDesign/TravelQuery/AdjMGraph.h
 AdjMGraphCreate.h

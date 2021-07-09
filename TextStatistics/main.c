@@ -10,43 +10,87 @@ typedef char DataType;
 #include "r.h"
 
 int main(void) {
-	int flag = 1;
+	int flag = -1;
 	//创建顺序表
 	SeqList myList;
 	//创建用于存储文本统计信息的结构体
 	TextInformation tl;
-	char word[MaxSize] = "\0";
+	char word[MaxSize];
 
-	while (flag) {
-		//初始化界面
+	while (1)
+	{
+		int choice;
 		system("cls");
-
-		//初始化word,然后输入赋值
-		strcpy(word,"\0");
-
-		printf("请输入一段文字：");
-		gets(word);
-
-		//初始化并把字符串传入顺序表
-		ListInitiate(&myList);
-		for (int i = 0; word[i] != '\0'; ++i) {
-			ListInsert(&myList, i, word[i]);
+		printf("================================================================================\n");
+		printf("                                 文字统计分析\n");
+		printf("================================================================================\n");
+		printf("\n");
+		printf("                                 1.输入文字\n");
+		printf("                                 2.存入线性表\n");
+		printf("                                 3.统计文字信息\n");
+		printf("                                 4.打印文字信息\n");
+		printf("                                 5.退出\n");
+		printf("\n");
+		printf("================================================================================\n");
+		printf("================================================================================\n");
+		printf("请选择对应功能:");
+		scanf("%d", &choice);
+		getchar();
+		while (choice < 1 || choice >5) {
+			printf("输入数字不正确，请重新输入1-5:");
+			scanf("%d", &choice);
 		}
 
-		//对文本进行检查
-		TextCheck(myList, &tl);
-		//打印
-		TextPrint(tl);
+		switch (choice) {
+			case 1:
+				//初始化word,然后输入赋值
+				strcpy(word,"\0");
+				printf("请输入一段文字：");
+				gets(word);
+				flag = 0;
+				system("pause");//停顿
+				break;
+			case 2:
+				//初始化并把字符串传入顺序表
+				if (flag != 0){
+					printf("没有输入文字或者已经存入顺序表!\n");
+					system("pause");//停顿
+					break;
+				}
 
-		printf("\n是否继续?(1.继续;2.退出):");
-		scanf("%d", &flag);
-		if (flag==2){
-			return 0;
-		} else flag = 1;
-
-		//吸收回车
-		getchar();
-		//system("pause");
+				ListInitiate(&myList);
+				for (int i = 0; word[i] != '\0'; ++i) {
+					ListInsert(&myList, i, word[i]);
+				}
+				printf("字符存入线性表成功!\n");
+				flag = 1;
+				system("pause");//停顿
+				break;
+			case 3:
+				//对文本进行检查
+				if (flag != 1){
+					printf("还没有存入线性表或者已经对文本进行检查!\n");
+					system("pause");//停顿
+					break;
+				}
+				TextCheck(myList, &tl);
+				printf("文本检查成功!\n");
+				flag =  2;
+				system("pause");
+				break;
+			case 4:
+				//打印
+				if (flag != 2){
+					printf("没有进行文本检查!\n");
+					system("pause");
+					break;
+				}
+				TextPrint(tl);
+				system("pause");
+				break;
+			default:
+				return 0;
+		}
 	}
 }
 

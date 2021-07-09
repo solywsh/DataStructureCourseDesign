@@ -13,13 +13,17 @@
   <component name="ChangeListManager">
     <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment="增加循环">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelQuery/Dijkstra.h" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/Dijkstra.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/TravelQuery.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/TravelQuery.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/code.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/map.h" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/map.h" afterDir="false" />
     </list>
@@ -39,6 +43,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
@@ -73,6 +85,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -88,7 +105,9 @@
       <workItem from="1625755452958" duration="13000" />
       <workItem from="1625758461275" duration="113000" />
       <workItem from="1625793026994" duration="225000" />
-      <workItem from="1625793306263" duration="1189000" />
+      <workItem from="1625793306263" duration="2645000" />
+      <workItem from="1625810684751" duration="1342000" />
+      <workItem from="1625812100608" duration="157000" />
     </task>
     <task id="LOCAL-00001" summary="完成主要功能">
       <created>1625538184665</created>
