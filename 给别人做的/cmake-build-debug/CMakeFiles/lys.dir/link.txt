@@ -1,3 +1,0 @@
-"D:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\lys.dir/objects.a
-D:\PROGRA~2\MinGW\MinGW\bin\ar.exe cr CMakeFiles\lys.dir/objects.a @CMakeFiles\lys.dir\objects1.rsp
-D:\PROGRA~2\MinGW\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\lys.dir/objects.a -Wl,--no-whole-archive -o lys.exe -Wl,--out-implib,liblys.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\lys.dir\linklibs.rsp

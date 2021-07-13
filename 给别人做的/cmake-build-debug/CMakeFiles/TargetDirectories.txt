@@ -1,3 +1,0 @@
-E:/MyProgram/school/DataStructure/lys/cmake-build-debug/CMakeFiles/lys.dir
-E:/MyProgram/school/DataStructure/lys/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/MyProgram/school/DataStructure/lys/cmake-build-debug/CMakeFiles/rebuild_cache.dir
