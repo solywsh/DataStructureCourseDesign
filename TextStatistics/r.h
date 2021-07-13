@@ -5,7 +5,7 @@
 
 typedef struct {
 	int ALL_number, CN_number, EN_number, NUM_number, SPA_number;
-	char all_words[100], cn_words[100], en_words[100], num_words[1000];
+	char all_words[1000], cn_words[1000], en_words[1000], num_words[1000];
 } TextInformation;
 
 //初始化
@@ -46,7 +46,7 @@ void TextCheck(SeqList myList_, TextInformation *tl_) {
 		if ((unsigned char) temporary > 127) {
 			tl_->cn_words[tl_->CN_number] = temporary;
 			tl_->CN_number++;
-			//总字数
+			//总字数1
 			tl_->all_words[tl_->ALL_number] = temporary;
 			tl_->ALL_number++;
 			continue;
@@ -70,12 +70,15 @@ void TextCheck(SeqList myList_, TextInformation *tl_) {
 			continue;
 		}
 	}
-
 	//对字符串添加结束符号，以防止出现有未初始化的内存导致末尾有乱码的情况
 	tl_->all_words[tl_->ALL_number] = '\0';
 	tl_->cn_words[tl_->CN_number] = '\0';
 	tl_->en_words[tl_->EN_number] = '\0';
 	tl_->num_words[tl_->NUM_number] = '\0';
+
+	//由于一个中文字符占位两个字节。所以需要判断两次才能确定一个中文字符。这里需要删除多余的数字
+	tl_->CN_number = tl_->CN_number/2;
+	tl_->ALL_number = tl_->ALL_number - tl_->CN_number;
 
 }
 
@@ -83,7 +86,7 @@ void TextPrint(TextInformation tl_){
 
 	printf("\n");
 	printf("总字数：%d\n%s\n", tl_.ALL_number, tl_.all_words);
-	printf("中文字数：%d\n%s\n", tl_.CN_number / 2, tl_.cn_words);
+	printf("中文字数：%d\n%s\n", tl_.CN_number , tl_.cn_words);
 	printf("英文字数：%d\n%s\n", tl_.EN_number, tl_.en_words);
 	printf("数字字数：%d\n%s\n", tl_.NUM_number, tl_.num_words);
 	printf("空格字数：%d\n", tl_.SPA_number);

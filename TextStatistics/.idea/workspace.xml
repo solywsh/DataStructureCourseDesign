@@ -11,20 +11,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment="增加循环">
+    <list default="true" id="87bc076c-de40-414b-8424-256a486f9e15" name="默认变更列表" comment="添加控制台界面">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TextStatistics.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TextStatistics.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/Dijkstra.h" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/Dijkstra.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/CMakeFiles/TravelQuery.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/r.h" beforeDir="false" afterPath="$PROJECT_DIR$/r.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/TravelQuery.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/cmake-build-debug/TravelQuery.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelQuery/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TravelQuery/map.h" beforeDir="false" afterPath="$PROJECT_DIR$/../TravelQuery/map.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,11 +79,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -107,7 +96,17 @@
       <workItem from="1625793026994" duration="225000" />
       <workItem from="1625793306263" duration="2645000" />
       <workItem from="1625810684751" duration="1342000" />
-      <workItem from="1625812100608" duration="157000" />
+      <workItem from="1625812100608" duration="286000" />
+      <workItem from="1625814634827" duration="608000" />
+      <workItem from="1625816207879" duration="11000" />
+      <workItem from="1625909754661" duration="5072000" />
+      <workItem from="1625986911150" duration="730000" />
+      <workItem from="1625991633363" duration="597000" />
+      <workItem from="1626011103162" duration="728000" />
+      <workItem from="1626053161161" duration="928000" />
+      <workItem from="1626070243179" duration="87000" />
+      <workItem from="1626071205444" duration="753000" />
+      <workItem from="1626139125679" duration="1324000" />
     </task>
     <task id="LOCAL-00001" summary="完成主要功能">
       <created>1625538184665</created>
@@ -137,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625755422780</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加控制台界面">
+      <created>1625812276561</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625812276561</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +166,7 @@
     <MESSAGE value="add gets()" />
     <MESSAGE value="增加r.h" />
     <MESSAGE value="增加循环" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加循环" />
+    <MESSAGE value="添加控制台界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加控制台界面" />
   </component>
 </project>

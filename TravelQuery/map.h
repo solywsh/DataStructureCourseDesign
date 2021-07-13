@@ -24,7 +24,7 @@ void CreatePlace(char PlaceName[MaxVertices][100]) {
 	printf("初始化成功!\n");
 
 	int LetterCode = 65;//创建英文编码，A的编码为65
-	printf("请输入10个地点名(回车默认为A-J)：");
+	printf("请输入10个景点名称(回车默认为A-J)：");
 
 	for (int i = 0; i < MaxVertices; ++i) {
 		printf("\n请输入第%d景点的名称：", i + 1);
@@ -46,7 +46,7 @@ void CreatePlace(char PlaceName[MaxVertices][100]) {
 	printf("\n");
 }
 
-//创建邻接矩阵
+//创建图
 int CreateAdjacencyMatrix(char PlaceName[MaxVertices][100], RowColWeight AM[]) {
 	system("cls");
 	if (!strcmp(PlaceName[0], "\0")) {
@@ -199,6 +199,5 @@ void find_one(char PlaceName[MaxVertices][100], int distance_[MaxVertices], cons
 		}
 		printf("\n");
 	}
-	system("pause");//停顿
-	return;
+	system("pause");
 }
