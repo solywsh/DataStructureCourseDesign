@@ -1,0 +1,4 @@
+﻿  main.c
+E:\MyProgram\school\DataStructure\lys\vs\lys\main.c(19,20): warning C4018: “<”: 有符号/无符号不匹配
+E:\MyProgram\school\DataStructure\lys\vs\lys\main.c(22,20): warning C4018: “<”: 有符号/无符号不匹配
+  lys.vcxproj -> E:\MyProgram\school\DataStructure\lys\vs\lys\Debug\lys.exe
